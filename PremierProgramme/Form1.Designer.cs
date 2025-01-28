@@ -41,9 +41,10 @@
             // btn_valider
             // 
             this.btn_valider.BackColor = System.Drawing.Color.DarkGray;
-            this.btn_valider.Location = new System.Drawing.Point(371, 138);
+            this.btn_valider.Location = new System.Drawing.Point(742, 265);
+            this.btn_valider.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_valider.Name = "btn_valider";
-            this.btn_valider.Size = new System.Drawing.Size(75, 28);
+            this.btn_valider.Size = new System.Drawing.Size(150, 54);
             this.btn_valider.TabIndex = 0;
             this.btn_valider.Text = "Valider";
             this.btn_valider.UseVisualStyleBackColor = false;
@@ -51,60 +52,68 @@
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(289, 37);
+            this.textBoxNom.Location = new System.Drawing.Point(578, 71);
+            this.textBoxNom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(267, 20);
+            this.textBoxNom.Size = new System.Drawing.Size(530, 31);
             this.textBoxNom.TabIndex = 4;
             // 
             // textBoxPrenom
             // 
-            this.textBoxPrenom.Location = new System.Drawing.Point(289, 63);
+            this.textBoxPrenom.Location = new System.Drawing.Point(578, 121);
+            this.textBoxPrenom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxPrenom.Name = "textBoxPrenom";
-            this.textBoxPrenom.Size = new System.Drawing.Size(267, 20);
+            this.textBoxPrenom.Size = new System.Drawing.Size(530, 31);
             this.textBoxPrenom.TabIndex = 5;
             // 
             // nom
             // 
             this.nom.AutoSize = true;
-            this.nom.Location = new System.Drawing.Point(132, 44);
+            this.nom.Location = new System.Drawing.Point(264, 85);
+            this.nom.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.nom.Name = "nom";
-            this.nom.Size = new System.Drawing.Size(38, 13);
+            this.nom.Size = new System.Drawing.Size(74, 25);
             this.nom.TabIndex = 6;
             this.nom.Text = "Nom : ";
             // 
             // prenom
             // 
             this.prenom.AutoSize = true;
-            this.prenom.Location = new System.Drawing.Point(132, 70);
+            this.prenom.Location = new System.Drawing.Point(264, 135);
+            this.prenom.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.prenom.Name = "prenom";
-            this.prenom.Size = new System.Drawing.Size(49, 13);
+            this.prenom.Size = new System.Drawing.Size(98, 25);
             this.prenom.TabIndex = 7;
             this.prenom.Text = "Prenom :";
             // 
             // ChoixDiff
             // 
+            this.ChoixDiff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ChoixDiff.FormattingEnabled = true;
-            this.ChoixDiff.Location = new System.Drawing.Point(289, 89);
+            this.ChoixDiff.Location = new System.Drawing.Point(578, 171);
+            this.ChoixDiff.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ChoixDiff.Name = "ChoixDiff";
-            this.ChoixDiff.Size = new System.Drawing.Size(267, 21);
+            this.ChoixDiff.Size = new System.Drawing.Size(530, 33);
             this.ChoixDiff.TabIndex = 16;
             this.ChoixDiff.SelectedIndexChanged += new System.EventHandler(this.SelectIndexChanged);
             // 
             // difficulte
             // 
             this.difficulte.AutoSize = true;
-            this.difficulte.Location = new System.Drawing.Point(132, 101);
+            this.difficulte.Location = new System.Drawing.Point(264, 194);
+            this.difficulte.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.difficulte.Name = "difficulte";
-            this.difficulte.Size = new System.Drawing.Size(51, 13);
+            this.difficulte.Size = new System.Drawing.Size(103, 25);
             this.difficulte.TabIndex = 17;
             this.difficulte.Text = "difficultés";
             // 
             // btn_fermer
             // 
             this.btn_fermer.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_fermer.Location = new System.Drawing.Point(371, 172);
+            this.btn_fermer.Location = new System.Drawing.Point(742, 331);
+            this.btn_fermer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_fermer.Name = "btn_fermer";
-            this.btn_fermer.Size = new System.Drawing.Size(75, 23);
+            this.btn_fermer.Size = new System.Drawing.Size(150, 44);
             this.btn_fermer.TabIndex = 18;
             this.btn_fermer.Text = "Fermer";
             this.btn_fermer.UseVisualStyleBackColor = false;
@@ -112,10 +121,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.btn_fermer);
             this.Controls.Add(this.difficulte);
             this.Controls.Add(this.ChoixDiff);
@@ -125,9 +134,9 @@
             this.Controls.Add(this.textBoxNom);
             this.Controls.Add(this.btn_valider);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

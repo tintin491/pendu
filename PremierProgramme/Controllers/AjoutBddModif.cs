@@ -14,7 +14,7 @@ namespace PremierProgramme.Controllers
             get { return cpt; }
             set { cpt = value; }
         }
-        public DataGridView rechargerDvg(DataGridView dgv, TextBox mot, ComboBox diff)
+        public DataGridView RechargerDvg(DataGridView dgv, TextBox mot, ComboBox diff)
         {
             try
             {
@@ -65,49 +65,44 @@ namespace PremierProgramme.Controllers
                     }
                 }
             }
-            else
+            else if (cpt == 1)
             {
-                if (cpt == 1)
+                try
                 {
+                    Connection conn = new Connection();
+                    using (MySqlCommand cmd = new MySqlCommand("UPDATE mots SET LABELMOTS = '" + mot + "', IDDIFFICULTE = '" + diff + "' WHERE IDMOTS = '" + id + "';", conn.Laconnection))
                     {
-                        try
-                        {
-                            Connection conn = new Connection();
-                            using (MySqlCommand cmd = new MySqlCommand("UPDATE mots SET LABELMOTS = '" + mot + "', IDDIFFICULTE = '" + diff + "' WHERE IDMOTS = '" + id + "';", conn.Laconnection))
-                            {
-                                conn.Laconnection.Open();
-                                MySqlDataReader reader = cmd.ExecuteReader();
-                                cpt = 0;
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
-                        }
+                        conn.Laconnection.Open();
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        cpt = 0;
                     }
                 }
-                else
+                catch (Exception e)
                 {
-                    try
+                    MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
+                }
+            }
+            else
+            {
+                try
+                {
+                    Connection conn = new Connection();
+                    string motAjouter = mot.ToUpper();
+                    using (MySqlCommand cmd = new MySqlCommand("Delete from mots where LABELMOTS = '" + mot + "' and IDDIFFICULTE = '" + diff + "' and IDMOTS = '" + id + "'", conn.Laconnection))
                     {
-                        Connection conn = new Connection();
-                        string motAjouter = mot.ToUpper();
-                        using (MySqlCommand cmd = new MySqlCommand("Delete from mots where LABELMOTS = '" + mot + "' and IDDIFFICULTE = '" + diff + "' and IDMOTS = '" + id + "'", conn.Laconnection))
-                        {
-                            conn.Laconnection.Open();
-                            MySqlDataReader reader = cmd.ExecuteReader();
-                            cpt = 0;
-                        }
+                        conn.Laconnection.Open();
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        cpt = 0;
                     }
-                    catch (Exception e)
-                    {
-                        MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
-                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
                 }
             }
         }
 
-        public Boolean get_ifMotinBdd(string mot, string diff)
+        public Boolean Get_ifMotinBdd(string mot, string diff)
         {
 
             Boolean result = false;

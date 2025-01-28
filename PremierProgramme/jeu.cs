@@ -42,8 +42,8 @@ namespace PremierProgramme
             txt_nom.Text = nomPrenomJoueur;
             txt_difficulte.Text = difficultePartie;
             NewPartie.difficulte = difficultePartie;
-            NewPartie.genererMotAtrouver();
-            NewPartie.genererMotAfficher(NewPartie.motAtrouver);
+            NewPartie.GenererMotAtrouver();
+            NewPartie.GenererMotAfficher(NewPartie.motAtrouver);
             NewPartie.zoneTxt.Text = NewPartie.motAfficher;
             
         }
@@ -138,8 +138,8 @@ namespace PremierProgramme
             NewPartie.imagePendue.Image = Properties.Resources.C1;
             NewPartie.motAtrouver = "";
             NewPartie.motAfficher = "";
-            NewPartie.genererMotAtrouver();
-            NewPartie.genererMotAfficher(NewPartie.motAtrouver);
+            NewPartie.GenererMotAtrouver();
+            NewPartie.GenererMotAfficher(NewPartie.motAtrouver);
             NewPartie.zoneTxt.Text = NewPartie.motAfficher;
             timer.Start();
             buttonA.Enabled = true;
@@ -173,7 +173,7 @@ namespace PremierProgramme
         private void ButtonFermer_Click(object sender, EventArgs e)
         {
             SousFormulaire SF = new SousFormulaire((System.Windows.Forms.Application.OpenForms["Menu"] as Menu).Pan_SubForm);
-            SF.openChildForm(new Form1());
+            SF.OpenChildForm(new Form1());
             timer.Stop();
             this.Close();
         }

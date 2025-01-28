@@ -60,7 +60,7 @@ namespace PremierProgramme
                 joueur += " " + textBoxPrenom.Text;
 
                 SousFormulaire SF = new SousFormulaire((System.Windows.Forms.Application.OpenForms["Menu"] as Menu).Pan_SubForm);
-                SF.openChildForm(new jeu(joueur, Convert.ToString(ChoixDiff.Text)));
+                SF.OpenChildForm(new jeu(joueur, Convert.ToString(ChoixDiff.Text)));
                 this.Close();
             }
 
@@ -69,11 +69,6 @@ namespace PremierProgramme
         private void ButtonFermer_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

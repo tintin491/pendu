@@ -82,7 +82,7 @@ namespace PremierProgramme
             txt_nonmotModif.Text = "";
             txt_modifMot.Text = "";
             cbb_diffMotmodif.SelectedIndex = -1;
-            modifierBdd.cacherMots(pan_modiffMot);
+            modifierBdd.CacherMots(pan_modiffMot);
     
         }
 
@@ -93,13 +93,13 @@ namespace PremierProgramme
 
         private void Btn_ValiderModifmot_Click(object sender, EventArgs e)
         {
-            if (ajoutModiff.get_ifMotinBdd(txt_nonmotModif.Text, cbb_diffMotmodif.SelectedIndex.ToString()))
+            if (ajoutModiff.Get_ifMotinBdd(txt_nonmotModif.Text, cbb_diffMotmodif.SelectedIndex.ToString()))
             {
                 ajoutModiff.AjouterModif(txt_modifMot.Text, txt_nonmotModif.Text, cbb_diffMotmodif.SelectedIndex.ToString());
-                dgv_Mots = ajoutModiff.rechargerDvg(dgv_Mots, txt_nonmotModif, cbb_diffMotmodif);
+                dgv_Mots = ajoutModiff.RechargerDvg(dgv_Mots, txt_nonmotModif, cbb_diffMotmodif);
                 dgv_Mots.Enabled = true;
                 SousFormulaire modifierBdd = new SousFormulaire(pan_modiffMot);
-                modifierBdd.cacherMots(pan_modiffMot);
+                modifierBdd.CacherMots(pan_modiffMot);
             }
             else
             {

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PremierProgramme.Controllers;
 
@@ -18,10 +14,9 @@ namespace PremierProgramme.Modele
         }
 
         #region Creation formulaire pour le menu 
-        public void openChildForm(Form formEnfant)
+        public void OpenChildForm(Form formEnfant)
         {
-            if (activeForm != null)
-                activeForm.Close();
+            activeForm?.Close();
 
             activeForm = formEnfant;
             formEnfant.TopLevel = false;
@@ -35,7 +30,7 @@ namespace PremierProgramme.Modele
         }
         #endregion
 
-        public void cacherMots(Panel PanelSousFormlaire)
+        public void CacherMots(Panel PanelSousFormlaire)
         {
             PanelSousFormlaire.Visible = false; 
         }
@@ -110,37 +105,37 @@ namespace PremierProgramme.Modele
                     break;
 
                 case (2):
-                    imagePendue.Image = Properties.Resources.C2;
+                    imagePendue.Image = Properties.Resources.C3;
                     imagePendue.Refresh();
                     break;
 
                 case (3):
-                    imagePendue.Image = Properties.Resources.C2;
+                    imagePendue.Image = Properties.Resources.C4;
                     imagePendue.Refresh();
                     break;
 
                 case (4):
-                    imagePendue.Image = Properties.Resources.C2;
+                    imagePendue.Image = Properties.Resources.C5;
                     imagePendue.Refresh();
                     break;
 
                 case (5):
-                    imagePendue.Image = Properties.Resources.C2;
+                    imagePendue.Image = Properties.Resources.C6;
                     imagePendue.Refresh();
                     break;
 
                 case (6):
-                    imagePendue.Image = Properties.Resources.C2;
+                    imagePendue.Image = Properties.Resources.C7;
                     imagePendue.Refresh();
                     break;
 
                 case (7):
-                    imagePendue.Image = Properties.Resources.C2;
+                    imagePendue.Image = Properties.Resources.C8;
                     imagePendue.Refresh();
                     break;
 
                 case (8):
-                    imagePendue.Image = Properties.Resources.C2;
+                    imagePendue.Image = Properties.Resources.C9;
                     imagePendue.Refresh();
                     break;
             }
@@ -148,18 +143,17 @@ namespace PremierProgramme.Modele
         #endregion
 
         #region Fonction pour generer le mot a trouver
-        public void genererMotAtrouver()
+        public void GenererMotAtrouver()
         {
             Mots liste  = new Mots();
             var listeMotaTrouver = liste.MotAtrouver(difficulte); 
             Random aleatoire = new Random();
-            int nbAleatoire = aleatoire.Next(listeMotaTrouver.Count);
-            motAtrouver  = listeMotaTrouver[nbAleatoire].ToUpper();
+            motAtrouver  = listeMotaTrouver[aleatoire.Next(listeMotaTrouver.Count)].ToUpper();
         }
         #endregion
 
         #region Fonction por generer le mot a afficher
-        public void genererMotAfficher(string motAtrouver)
+        public void GenererMotAfficher(string motAtrouver)
         {
             for (int i = 0; i <= motAtrouver.Length - 1; i++)
             {

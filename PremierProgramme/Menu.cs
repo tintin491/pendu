@@ -24,12 +24,12 @@ namespace PremierProgramme
         private void motsBDDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SousFormulaire SF2 = new SousFormulaire(Pan_SubForm);
-            SF2.openChildForm(new ListeMot());
+            SF2.OpenChildForm(new ListeMot());
         }
         private void DémarrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SousFormulaire SF1 = new SousFormulaire(Pan_SubForm);
-            SF1.openChildForm(new Form1());
+            SF1.OpenChildForm(new Form1());
         }
 
         private void Cbb_diffMotmodif_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace PremierProgramme
         private void inscriptionUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SousFormulaire SF1 = new SousFormulaire(Pan_SubForm);
-            SF1.openChildForm(new NewUtilisateur());
+            SF1.OpenChildForm(new NewUtilisateur());
         }
     }
 }
