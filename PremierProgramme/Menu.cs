@@ -1,13 +1,5 @@
 ﻿using PremierProgramme.Modele;
-using PremierProgramme.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PremierProgramme
@@ -21,7 +13,7 @@ namespace PremierProgramme
         }
 
 
-        private void motsBDDToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MotsBDDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SousFormulaire SF2 = new SousFormulaire(Pan_SubForm);
             SF2.OpenChildForm(new ListeMot());
@@ -32,22 +24,7 @@ namespace PremierProgramme
             SF1.OpenChildForm(new Form1());
         }
 
-        private void Cbb_diffMotmodif_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void inscriptionUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        private void InscriptionUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SousFormulaire SF1 = new SousFormulaire(Pan_SubForm);
             SF1.OpenChildForm(new NewUtilisateur());

@@ -40,7 +40,7 @@ namespace PremierProgramme
 
             }
         }
-        private void btn_valider_Click(object sender, EventArgs e)
+        private void Btn_valider_Click(object sender, EventArgs e)
         {
             if (ChoixDiff.SelectedIndex == 0)
             {
@@ -60,7 +60,7 @@ namespace PremierProgramme
                 joueur += " " + textBoxPrenom.Text;
 
                 SousFormulaire SF = new SousFormulaire((System.Windows.Forms.Application.OpenForms["Menu"] as Menu).Pan_SubForm);
-                SF.OpenChildForm(new jeu(joueur, Convert.ToString(ChoixDiff.Text)));
+                SF.OpenChildForm(new Jeu(joueur, Convert.ToString(ChoixDiff.Text)));
                 this.Close();
             }
 

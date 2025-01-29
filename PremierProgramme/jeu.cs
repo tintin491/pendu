@@ -1,17 +1,11 @@
 ﻿using PremierProgramme.Modele;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PremierProgramme
 {
-    public partial class jeu : Form
+    public partial class Jeu : Form
     {
 
         public static string motAtrouver = "";
@@ -27,8 +21,10 @@ namespace PremierProgramme
             InitializeComponent();
             // Ajouter le code permettant l’initialisation du jeu 
             //timer
-            timer = new Timer(); //Instancie un objet timer de la classe 
-            timer.Interval = 1000;
+            timer = new Timer
+            {
+                Interval = 1000
+            }; //Instancie un objet timer de la classe 
             timer.Tick += Timer_Tick;
             timer.Start();
             txt_timer.Text = Convert.ToString(timer.Interval);
@@ -36,7 +32,7 @@ namespace PremierProgramme
         }
 
 
-        public jeu(string nomPrenomJoueur, string difficultePartie)
+        public Jeu(string nomPrenomJoueur, string difficultePartie)
         {
             Init();
             txt_nom.Text = nomPrenomJoueur;
@@ -45,12 +41,10 @@ namespace PremierProgramme
             NewPartie.GenererMotAtrouver();
             NewPartie.GenererMotAfficher(NewPartie.motAtrouver);
             NewPartie.zoneTxt.Text = NewPartie.motAfficher;
-            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
- 
             timer.Interval -= 1;
             temps += 1;
             txt_timer.Text = Convert.ToString(timer.Interval);
@@ -71,7 +65,7 @@ namespace PremierProgramme
                              MessageBoxDefaultButton.Button1);
                     if (message == DialogResult.Yes)
                     {
-                        redemarrerPartie();
+                        RedemarrerPartie();
                     }
                     else
                     {
@@ -81,7 +75,7 @@ namespace PremierProgramme
             }
         }
 
-        private void btn_A_click(object sender, EventArgs e)
+        private void Btn_A_click(object sender, EventArgs e)
         {
 
             NewPartie.Verifier((sender as Button).Text.ToString());
@@ -100,7 +94,7 @@ namespace PremierProgramme
 
                 if (msg == DialogResult.Yes)
                 {
-                    redemarrerPartie();
+                    RedemarrerPartie();
                 }
                 else
                 {
@@ -119,7 +113,7 @@ namespace PremierProgramme
                            MessageBoxDefaultButton.Button1);
                 if (message == DialogResult.Yes)
                 {
-                    redemarrerPartie();
+                    RedemarrerPartie();
                 }
                 else
                 {
@@ -129,7 +123,7 @@ namespace PremierProgramme
             }
         }
 
-        public void redemarrerPartie()
+        public void RedemarrerPartie()
         {
             progress_barPendue.Value = 0;
             timer.Interval = 1000;
@@ -142,65 +136,18 @@ namespace PremierProgramme
             NewPartie.GenererMotAfficher(NewPartie.motAtrouver);
             NewPartie.zoneTxt.Text = NewPartie.motAfficher;
             timer.Start();
-            buttonA.Enabled = true;
-            buttonB.Enabled = true;
-            buttonC.Enabled = true;
-            buttonD.Enabled = true;
-            buttonE.Enabled = true;
-            buttonF.Enabled = true;
-            buttonG.Enabled = true;
-            buttonH.Enabled = true;
-            buttonI.Enabled = true;
-            buttonJ.Enabled = true;
-            buttonK.Enabled = true;
-            buttonL.Enabled = true;
-            buttonM.Enabled = true;
-            buttonN.Enabled = true;
-            buttonO.Enabled = true;
-            buttonP.Enabled = true;
-            buttonQ.Enabled = true;
-            buttonR.Enabled = true;
-            buttonS.Enabled = true;
-            buttonT.Enabled = true;
-            buttonU.Enabled = true;
-            buttonV.Enabled = true;
-            buttonW.Enabled = true;
-            buttonX.Enabled = true;
-            buttonY.Enabled = true;
-            buttonZ.Enabled = true;
+            foreach (var button in this.Controls.OfType<Button>())
+            {
+                button.Enabled = true;
+            }
         }
 
         private void ButtonFermer_Click(object sender, EventArgs e)
         {
-            SousFormulaire SF = new SousFormulaire((System.Windows.Forms.Application.OpenForms["Menu"] as Menu).Pan_SubForm);
+            SousFormulaire SF = new SousFormulaire((Application.OpenForms["Menu"] as Menu).Pan_SubForm);
             SF.OpenChildForm(new Form1());
             timer.Stop();
             this.Close();
-        }
-
-        private void Txt_motPendue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_difficulte_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

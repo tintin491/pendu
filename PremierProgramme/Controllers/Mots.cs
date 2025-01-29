@@ -11,7 +11,7 @@ namespace PremierProgramme.Controllers
     {
         DataTable dtListeMots;
 
-        #region Recuperation liste de mots
+        #region Récupération liste de mots
         public DataTable GetListeMots()
         {
             //Instencier l’objet dtListeMots de type DataTable
@@ -93,7 +93,7 @@ namespace PremierProgramme.Controllers
         }
         #endregion
 
-        #region Recuperation liste most en fonction d'une difficulte
+        #region Récupération liste mots en fonction d'une difficulté
         public List<string> MotAtrouver( string diff)
         { 
             List<String> ListeDeMotatrouver = new List<string>();

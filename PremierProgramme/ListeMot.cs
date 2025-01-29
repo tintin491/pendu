@@ -10,7 +10,7 @@ namespace PremierProgramme
     {
         DataView dv_mot;
         Mots dt_mot;
-        AjoutBddModif ajoutModiff = new AjoutBddModif();
+        readonly AjoutBddModif ajoutModiff = new AjoutBddModif();
         public ListeMot()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace PremierProgramme
         }
 
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             dv_mot = new DataView(dt_mot.GetListeMotsdifficult(txtBox_chercheMot.Text, comboBox_diff.SelectedIndex.ToString()));
             dgv_Mots.DataSource = dv_mot;
@@ -93,7 +93,7 @@ namespace PremierProgramme
 
         private void Btn_ValiderModifmot_Click(object sender, EventArgs e)
         {
-            if (ajoutModiff.Get_ifMotinBdd(txt_nonmotModif.Text, cbb_diffMotmodif.SelectedIndex.ToString()))
+            if (ajoutModiff.GetIfMotInBdd(txt_nonmotModif.Text, cbb_diffMotmodif.SelectedIndex.ToString()))
             {
                 ajoutModiff.AjouterModif(txt_modifMot.Text, txt_nonmotModif.Text, cbb_diffMotmodif.SelectedIndex.ToString());
                 dgv_Mots = ajoutModiff.RechargerDvg(dgv_Mots, txt_nonmotModif, cbb_diffMotmodif);
@@ -107,7 +107,7 @@ namespace PremierProgramme
             }
         }
 
-        private void btn_SupprMots_Click(object sender, EventArgs e)
+        private void Btn_SupprMots_Click(object sender, EventArgs e)
         {
             dgv_Mots.Enabled = false;
             SousFormulaire modifierBdd = new SousFormulaire(pan_modiffMot);

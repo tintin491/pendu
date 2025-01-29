@@ -104,7 +104,7 @@
             this.comboBox_diff.Name = "comboBox_diff";
             this.comboBox_diff.Size = new System.Drawing.Size(498, 33);
             this.comboBox_diff.TabIndex = 4;
-            this.comboBox_diff.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox_diff.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // txtBox_chercheMot
             // 
@@ -153,7 +153,7 @@
             this.btn_SupprMots.TabIndex = 8;
             this.btn_SupprMots.Text = "Supprimer";
             this.btn_SupprMots.UseVisualStyleBackColor = true;
-            this.btn_SupprMots.Click += new System.EventHandler(this.btn_SupprMots_Click);
+            this.btn_SupprMots.Click += new System.EventHandler(this.Btn_SupprMots_Click);
             // 
             // pan_listemot
             // 

@@ -55,7 +55,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(855, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // jeuToolStripMenuItem
             // 
@@ -92,7 +91,7 @@
             this.motsPrésentToolStripMenuItem.Name = "motsPrésentToolStripMenuItem";
             this.motsPrésentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.motsPrésentToolStripMenuItem.Text = "Mots présent";
-            this.motsPrésentToolStripMenuItem.Click += new System.EventHandler(this.motsBDDToolStripMenuItem_Click);
+            this.motsPrésentToolStripMenuItem.Click += new System.EventHandler(this.MotsBDDToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -117,14 +116,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // inscriptionUtilisateurToolStripMenuItem
             // 
             this.inscriptionUtilisateurToolStripMenuItem.Name = "inscriptionUtilisateurToolStripMenuItem";
             this.inscriptionUtilisateurToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.inscriptionUtilisateurToolStripMenuItem.Text = "Inscription utilisateur ";
-            this.inscriptionUtilisateurToolStripMenuItem.Click += new System.EventHandler(this.inscriptionUtilisateurToolStripMenuItem_Click);
+            this.inscriptionUtilisateurToolStripMenuItem.Click += new System.EventHandler(this.InscriptionUtilisateurToolStripMenuItem_Click);
             // 
             // Menu
             // 

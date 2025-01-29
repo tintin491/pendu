@@ -102,9 +102,8 @@ namespace PremierProgramme.Controllers
             }
         }
 
-        public Boolean Get_ifMotinBdd(string mot, string diff)
+        public Boolean GetIfMotInBdd(string mot, string diff)
         {
-
             Boolean result = false;
             try
             {
